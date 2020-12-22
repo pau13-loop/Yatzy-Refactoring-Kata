@@ -83,6 +83,14 @@ def test_three_of_a_kind():
     assert 9 == Yatzy.three_of_a_kind(3, 3, 3, 4, 5)
     assert 15 == Yatzy.three_of_a_kind(5, 3, 5, 4, 5)
     assert 9 == Yatzy.three_of_a_kind(3, 3, 3, 3, 5)
+    # A pair instead be a threesome
+    assert 0 == Yatzy.three_of_a_kind(2, 3, 4, 6, 6)
+    # A double pair instead a threesome
+    assert 0 == Yatzy.three_of_a_kind(2, 2, 5, 6, 6)
+    # All different
+    assert 0 == Yatzy.three_of_a_kind(1, 2, 3, 4, 5)
+    # All the same
+    assert 6 == Yatzy.three_of_a_kind(2, 2, 2, 2, 2)
 
 
 def test_four_of_a_kind():
