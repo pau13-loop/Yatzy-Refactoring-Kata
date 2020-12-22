@@ -82,8 +82,32 @@ def two_pair(d1,  d2,  d3,  d4,  d5):
         return sum(pairs)
     else:
         return 0
-"""
 
+
+
+ORIGINAL THREE_OF_A_KIND
+    def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
+        t = [0]*6
+        t[d1-1] += 1
+        t[d2-1] += 1
+        t[d3-1] += 1
+        t[d4-1] += 1
+        t[d5-1] += 1
+        for i in range(6):
+            if (t[i] >= 3):
+                return (i+1) * 3
+        return 0
+
+
+REFACTOR THREE_OF_A_KIND
+def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
+    all_dice = [d1,  d2,  d3,  d4,  d5]
+    threesome = []
+    for dice in all_dice:
+        if all_dice.count(dice) >= 3 and threesome.count(dice) < 3:
+            threesome.append(dice)
+    return sum(threesome)
+"""
 
 if __name__ == "__main__":
 
@@ -100,3 +124,8 @@ if __name__ == "__main__":
     #assert 16 == two_pair(3, 3, 5, 4, 5)
     #assert 18 == two_pair(3, 3, 6, 6, 6)
     #assert 0 == two_pair(3, 3, 6, 5, 4)
+
+    # THREESOME
+    #assert 9 == Yatzy.three_of_a_kind(3, 3, 3, 4, 5)
+    #assert 15 == Yatzy.three_of_a_kind(5, 3, 5, 4, 5)
+    #assert 9 == three_of_a_kind(3, 3, 3, 3, 5)

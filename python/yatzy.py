@@ -8,6 +8,7 @@ class Yatzy:
 
 # Check that all the faces of the dice are equal to be able to make a Yatzy
 
+
     @staticmethod
     def yatzy(dice):
         for die in dice:
@@ -119,18 +120,18 @@ class Yatzy:
         else:
             return 0
 
+# We made an iterable list of the different dices,  we make an empty list where we will add the pairs. We
+# start a loop to look through all the dices. If the count of the dice number is equal or bigger to 3 AND the
+# account of the same number dice inside the threesome list is minor than 3, we append the dice number to the
+# threesome list. Finally we return the sumative of the threesome
     @staticmethod
     def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
-        for i in range(6):
-            if (t[i] >= 3):
-                return (i+1) * 3
-        return 0
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        threesome = []
+        for dice in all_dice:
+            if all_dice.count(dice) >= 3 and threesome.count(dice) < 3:
+                threesome.append(dice)
+        return sum(threesome)
 
     @staticmethod
     def four_of_a_kind(_1,  _2,  d3,  d4,  d5):
