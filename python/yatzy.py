@@ -1,75 +1,81 @@
 class Yatzy:
 
+    # Play the chance resource, make a sumative of all the faces of the dices
     @staticmethod
     def chance(d1, d2, d3, d4, d5):
-        total = (d1 + d2 + d3 + d4 + d5)
-        return total
+        return(d1 + d2 + d3 + d4 + d5)
+
+
+# Check that all the faces of the dice are equal to be able to make a Yatzy
 
     @staticmethod
     def yatzy(dice):
-        counts = [0]*(len(dice)+1)
         for die in dice:
-            counts[die-1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
+            if die == dice[0]:
+                continue
+            else:
+                return 0
+        return 50
 
+# Check how many of the dice show the same number
+# Check for how many dices with the number 1
     @staticmethod
     def ones(d1,  d2,  d3,  d4,  d5):
-        dice_faces = [d1, d2, d3, d4, d5]
+        all_dice = [d1, d2, d3, d4, d5]
         sum = 0
-        for d in dice_faces:
-            if d == 1:
+        for dice in all_dice:
+            if dice == 1:
                 sum += 1
         return sum
 
+# Check for how many dices with the number 2
     @staticmethod
     def twos(d1,  d2,  d3,  d4,  d5):
-        dice_faces = [d1, d2, d3, d4, d5]
+        all_dice = [d1, d2, d3, d4, d5]
         sum = 0
-        for d in dice_faces:
-            if d == 2:
+        for dice in all_dice:
+            if dice == 2:
                 sum += 2
         return sum
 
+# Check for how many dices with the number 3
     @staticmethod
     def threes(d1,  d2,  d3,  d4,  d5):
-        dice_faces = [d1, d2, d3, d4, d5]
+        all_dice = [d1, d2, d3, d4, d5]
         sum = 0
-        for d in dice_faces:
-            if d == 3:
+        for dice in all_dice:
+            if dice == 3:
                 sum += 3
         return sum
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
-
-    def fours(self):
+# Check for how many dices with the number 4
+    @staticmethod
+    def fours(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
         sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
+        for dice in all_dice:
+            if dice == 4:
                 sum += 4
         return sum
 
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)):
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
-
-    def sixes(self):
+# Check for how many dices with the number 5
+    @staticmethod
+    def fives(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
         sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
+        for dice in all_dice:
+            if dice == 5:
+                sum += 5
+        return sum
+
+# Check for how many dices with the number 6
+    @staticmethod
+    def sixes(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        sum = 0
+        for dice in all_dice:
+            if dice == 6:
+                sum += 6
         return sum
 
     @staticmethod
