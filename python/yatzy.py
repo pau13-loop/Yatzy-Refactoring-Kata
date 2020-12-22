@@ -8,6 +8,7 @@ class Yatzy:
 
 # Check that all the faces of the dice are equal to be able to make a Yatzy
 
+
     @staticmethod
     def yatzy(dice):
         for die in dice:
@@ -22,64 +23,64 @@ class Yatzy:
     @staticmethod
     def ones(d1,  d2,  d3,  d4,  d5):
         all_dice = [d1, d2, d3, d4, d5]
-        sum = 0
+        count = 0
         for dice in all_dice:
             if dice == 1:
-                sum += 1
-        return sum
+                count += 1
+        return count
 
 # Check for how many dices with the number 2
     @staticmethod
     def twos(d1,  d2,  d3,  d4,  d5):
         all_dice = [d1, d2, d3, d4, d5]
-        sum = 0
+        count = 0
         for dice in all_dice:
             if dice == 2:
-                sum += 2
-        return sum
+                count += 2
+        return count
 
 # Check for how many dices with the number 3
     @staticmethod
     def threes(d1,  d2,  d3,  d4,  d5):
         all_dice = [d1, d2, d3, d4, d5]
-        sum = 0
+        count = 0
         for dice in all_dice:
             if dice == 3:
-                sum += 3
-        return sum
+                count += 3
+        return count
 
 # Check for how many dices with the number 4
     @staticmethod
     def fours(d1,  d2,  d3,  d4,  d5):
         all_dice = [d1, d2, d3, d4, d5]
-        sum = 0
+        count = 0
         for dice in all_dice:
             if dice == 4:
-                sum += 4
-        return sum
+                count += 4
+        return count
 
 # Check for how many dices with the number 5
     @staticmethod
     def fives(d1,  d2,  d3,  d4,  d5):
         all_dice = [d1, d2, d3, d4, d5]
-        sum = 0
+        count = 0
         for dice in all_dice:
             if dice == 5:
-                sum += 5
-        return sum
+                count += 5
+        return count
 
 # Check for how many dices with the number 6
     @staticmethod
     def sixes(d1,  d2,  d3,  d4,  d5):
         all_dice = [d1, d2, d3, d4, d5]
-        sum = 0
+        count = 0
         for dice in all_dice:
             if dice == 6:
-                sum += 6
-        return sum
+                count += 6
+        return count
 
     @staticmethod
-    def score_pair(d1,  d2,  d3,  d4,  d5):
+    def one_pair(d1,  d2,  d3,  d4,  d5):
         counts = [0]*6
         counts[d1-1] += 1
         counts[d2-1] += 1
@@ -113,19 +114,6 @@ class Yatzy:
             return 0
 
     @staticmethod
-    def four_of_a_kind(_1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
-        return 0
-
-    @staticmethod
     def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
         t = [0]*6
         t[d1-1] += 1
@@ -136,6 +124,19 @@ class Yatzy:
         for i in range(6):
             if (t[i] >= 3):
                 return (i+1) * 3
+        return 0
+
+    @staticmethod
+    def four_of_a_kind(_1,  _2,  d3,  d4,  d5):
+        tallies = [0]*6
+        tallies[_1-1] += 1
+        tallies[_2-1] += 1
+        tallies[d3-1] += 1
+        tallies[d4-1] += 1
+        tallies[d5-1] += 1
+        for i in range(6):
+            if (tallies[i] >= 4):
+                return (i+1) * 4
         return 0
 
     @staticmethod
