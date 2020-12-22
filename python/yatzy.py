@@ -8,7 +8,6 @@ class Yatzy:
 
 # Check that all the faces of the dice are equal to be able to make a Yatzy
 
-
     @staticmethod
     def yatzy(dice):
         for die in dice:
@@ -79,37 +78,44 @@ class Yatzy:
                 count += 6
         return count
 
+# We made an iterable list of the different dices, we make an empty list where we will add the possible pairs
+# We made a variable to keep control of the number of the pair that we are actually working on
+# We start a loop to look through all the dices
+# FIRST CONDITIONAL "if", If the dice count is equal 2 and is equal or bigger than the current pair we are working with, we set up the new value of the current pair
+# SECOND CONDITIONAL, if the account of the dice in the list of possible pairs is grather than 0 we append
+# the value and if is not we clear the list because it menas is a bigger value than the value we had before
+# and after clear the list we append the new bigger value of a possible pair
     @staticmethod
     def one_pair(d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
-        return 0
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        possible_pairs = []
+        current_pair = 0
+        for dice in all_dice:
+            if all_dice.count(dice) == 2 and dice >= current_pair:
+                current_pair = dice
+                if possible_pairs.count(dice) > 0:
+                    possible_pairs.append(dice)
+                else:
+                    possible_pairs.clear()
+                    possible_pairs.append(dice)
+        return sum(possible_pairs)
 
+# We made an iterable list of the different dices,  we make an empty list where we will add the pairs
+# We start a loop to look though all the dices, the FIRST CONDITIONAL help to check that we are working minum
+# with a pair and the SECOND CONDITIONAL just help to make sure that you are just going to add pairs and
+# nothing over that
+# When we finish the loop we check that we have more than a pair in our list, is is the case we give back the
+# sumative of the pairs if is the opposite we just give back a 0
     @staticmethod
     def two_pair(d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-
-        if (n == 2):
-            return score * 2
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        pairs = []
+        for dice in all_dice:
+            if all_dice.count(dice) >= 2:
+                if pairs.count(dice) < 2:
+                    pairs.append(dice)
+        if len(pairs) > 2:
+            return sum(pairs)
         else:
             return 0
 
