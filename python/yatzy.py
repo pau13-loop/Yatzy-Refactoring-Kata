@@ -1,230 +1,180 @@
 class Yatzy:
 
+    # Play the chance resource, make a sumative of all the faces of the dices
     @staticmethod
     def chance(d1, d2, d3, d4, d5):
-        total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
-        return total
+        return(d1 + d2 + d3 + d4 + d5)
+
+
+# Check that all the faces of the dice are equal to be able to make a Yatzy
 
     @staticmethod
     def yatzy(dice):
-        counts = [0]*(len(dice)+1)
         for die in dice:
-            counts[die-1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
-    
-    @staticmethod
-    def ones( d1,  d2,  d3,  d4,  d5):
-        sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1): 
-            sum += 1
+            if die == dice[0]:
+                continue
+            else:
+                return 0
+        return 50
 
-        return sum
-    
-
+# Check how many of the dice show the same number
+# Check for how many dices with the number 1
     @staticmethod
-    def twos( d1,  d2,  d3,  d4,  d5):
-        sum = 0
-        if (d1 == 2):
-             sum += 2
-        if (d2 == 2):
-             sum += 2
-        if (d3 == 2):
-             sum += 2
-        if (d4 == 2):
-             sum += 2
-        if (d5 == 2):
-             sum += 2
-        return sum
-    
-    @staticmethod
-    def threes( d1,  d2,  d3,  d4,  d5):
-        s = 0
-        if (d1 == 3):
-             s += 3
-        if (d2 == 3):
-             s += 3
-        if (d3 == 3):
-             s += 3
-        if (d4 == 3):
-             s += 3
-        if (d5 == 3):
-             s += 3
-        return s
-    
+    def ones(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        count = 0
+        for dice in all_dice:
+            if dice == 1:
+                count += 1
+        return count
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
-    
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4): 
-                sum += 4
-        return sum
-    
-
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)): 
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
-    
-
-    def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)): 
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
-    
+# Check for how many dices with the number 2
     @staticmethod
-    def score_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
-        return 0
-    
+    def twos(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        count = 0
+        for dice in all_dice:
+            if dice == 2:
+                count += 2
+        return count
+
+# Check for how many dices with the number 3
     @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-                    
-        if (n == 2):
-            return score * 2
+    def threes(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        count = 0
+        for dice in all_dice:
+            if dice == 3:
+                count += 3
+        return count
+
+# Check for how many dices with the number 4
+    @staticmethod
+    def fours(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        count = 0
+        for dice in all_dice:
+            if dice == 4:
+                count += 4
+        return count
+
+# Check for how many dices with the number 5
+    @staticmethod
+    def fives(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        count = 0
+        for dice in all_dice:
+            if dice == 5:
+                count += 5
+        return count
+
+# Check for how many dices with the number 6
+    @staticmethod
+    def sixes(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1, d2, d3, d4, d5]
+        count = 0
+        for dice in all_dice:
+            if dice == 6:
+                count += 6
+        return count
+
+# We made an iterable list of the different dices, we made an empty list where we will add the possible
+# pairs. We made a variable to keep control of the number of the pair that we are actually working on. We
+# start a loop to look through all the dices. The FIRST CONDITIONAL "if", if the dice count is equal 2 and
+# the dice is equal or bigger than the current pair we are working with, we set up the new value of the
+# current pair. The SECOND CONDITIONAL "if", if the account of the dice in the list of possible pairs is
+# grather than 0 we append the dice value and if is not we clear the list because it menas is a bigger
+# value than the value we had before and after clear the list we append the new bigger value of a possible
+# pair
+    @staticmethod
+    def one_pair(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        possible_pairs = []
+        current_pair = 0
+        for dice in all_dice:
+            if all_dice.count(dice) == 2 and dice >= current_pair:
+                current_pair = dice
+                if possible_pairs.count(dice) > 0:
+                    possible_pairs.append(dice)
+                else:
+                    possible_pairs.clear()
+                    possible_pairs.append(dice)
+        return sum(possible_pairs)
+
+# We made an iterable list of the different dices, we make an empty list where we will add the pairs.
+# We start a loop to look though all the dices, the FIRST CONDITIONAL help to check that we are working minum with a pair and the SECOND CONDITIONAL just help to make sure that you are just going to add pairs and nothing over that. When we finish the loop we check that we have more than a pair in our list, if is the case we give back the sumative of the pairs if is the opposite we just give back a 0
+    @staticmethod
+    def two_pair(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        pairs = []
+        for dice in all_dice:
+            if all_dice.count(dice) >= 2:
+                if pairs.count(dice) < 2:
+                    pairs.append(dice)
+        if len(pairs) > 2:
+            return sum(pairs)
         else:
             return 0
-    
+
+# We made an iterable list of the different dices, we make an empty list where we will add the threesome.
+# We start a loop to look through all the dices. If the count of the dice with the same number is equal or
+# bigger to 3 AND the account of the same number dice inside the threesome list is minor than 3, we append
+# the dice to the threesome list. Finally we return the sumative of the list called threesome
     @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
-        return 0
-    
+    def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        threesome = []
+        for dice in all_dice:
+            if all_dice.count(dice) >= 3 and threesome.count(dice) < 3:
+                threesome.append(dice)
+        return sum(threesome)
 
+# We made an iterable list of the different dices, we make an empty list where we will add the four dice of
+# same number. We start a loop to look through all the dices. If the count of the dice with the same number
+# is equal or bigger to 4 AND the account of the same number dice inside the poker list is minor than 4, we
+# append the dice to the poker list. Finally we return the sumative of the list called poker
     @staticmethod
-    def three_of_a_kind( d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
-        for i in range(6):
-            if (t[i] >= 3):
-                return (i+1) * 3
-        return 0
-    
+    def four_of_a_kind(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        poker = []
+        for dice in all_dice:
+            if all_dice.count(dice) >= 4 and poker.count(dice) < 4:
+                poker.append(dice)
+        return sum(poker)
 
+# We made an iterable list of the different dices. And we create a conditional where we sort the list to have it in numerical order from 1 to 5 (in case is a small straight) and we check with a boolean if it's the same than a list from 1 to 5, in case it's true we just return a sumative of all numbers and in case is false we return a 0
     @staticmethod
-    def smallStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[0] == 1 and
-            tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1):
-            return 15
-        return 0
-    
-
-    @staticmethod
-    def largeStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1
-            and tallies[5] == 1):
-            return 20
-        return 0
-    
-
-    @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
-
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-
-        for i in range(6):
-            if (tallies[i] == 2): 
-                _2 = True
-                _2_at = i+1
-            
-
-        for i in range(6):
-            if (tallies[i] == 3): 
-                _3 = True
-                _3_at = i+1
-            
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
+    def smallStraight(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        if sorted(all_dice) == list(range(1, 6)):
+            return sum(all_dice)
         else:
             return 0
+
+# We made an iterable list of the different dices. And we create a conditional where we sort the list to
+# have in numerical order from 2 to 6 (in case is a large straight) and we check with a boolean if it's
+# the same than a list from 2 to 6, in case it's true we just return a sumative of all numbers and in case
+# is false we return a 0
+    @staticmethod
+    def largeStraight(d1,  d2,  d3,  d4,  d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        if sorted(all_dice) == list(range(2, 7)):
+            return sum(all_dice)
+        else:
+            return 0
+
+# We made a list with all the dice values. We made a loop to look through all the dice numbers. If the
+# dice account is equal to 3 or to 2 means that we have a threesome or a pair and we just want to continue
+# looping through all the dices, in case gives back a "False" result means that we are not having a
+# threesome and a pair to be able to make a full house, in this case we just return a 0. If it finish the
+# loop without get back a "False" means that we have a full house and we return a sumative of the all_dice
+# list
+    @staticmethod
+    def fullHouse(d1, d2, d3, d4, d5):
+        all_dice = [d1,  d2,  d3,  d4,  d5]
+        for dice in all_dice:
+            if all_dice.count(dice) == 3 or all_dice.count(dice) == 2:
+                continue
+            else:
+                return 0
+        return sum(all_dice)
