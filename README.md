@@ -15,7 +15,7 @@
 
 This project motivation is try to test all the learning that we have done since we started the course of _Web Development_. In this we will find non conventional and bad coding routines that we should be able to detect and correct.
 
-**[⬆ back to top](#tabe-of-contents)**
+**[⬆ back to top](#table-of-contents)**
 
 ---
 
@@ -26,7 +26,7 @@ This project motivation is try to test all the learning that we have done since 
 - MarkDown
 - Github
 
-**[⬆ back to top](#tabe-of-contents)**
+**[⬆ back to top](#table-of-contents)**
 
 ---
 
@@ -70,7 +70,7 @@ This document have all the functions explained minutely one by one, in case any 
 
 ## License
 
-**[⬆ back to top](#tabe-of-contents)**
+**[⬆ back to top](#table-of-contents)**
 
 ---
 
@@ -96,4 +96,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-**[⬆ back to top](#tabe-of-contents)**
+**[⬆ back to top](#table-of-contents)**
