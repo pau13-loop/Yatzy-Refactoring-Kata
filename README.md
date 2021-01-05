@@ -70,13 +70,11 @@ In this docuemnt we will find an original copy of the program of the game of Yat
 
 This document have all the functions explained minutely one by one, in case any user is not able to understand the code that conforms the yatzy program game.
 
+---
+
 **[⬆ back to top](#table-of-contents)**
 
----
-
 ## License
-
----
 
 MIT License
 
