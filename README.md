@@ -1,134 +1,99 @@
-﻿# Yatzy Refactoring Kata
+﻿# Yatzy
 
-This Refactoring Kata was designed by Jon Jagger and is available in his Cyber-Dojo. See [his blog post](http://jonjagger.blogspot.co.uk/2012/05/yahtzee-cyber-dojo-refactoring-in-java.html)
+> In this repository you'll wind the refactor of a **Christamas Kata** called Yatzy. This project has been designed for the Web _Development students_ of the first year. The goal of thsi Christmas kata is try to detect different code smells and try to make an effective and powerful refactoring.
 
-I have changed it a little, so that the rules more closely match the original game.
+## Table of Contents
 
-The other language translations have been contributed by:
+1. [Motivation](#motivation)
+1. [Used Technologies](#used-technologies)
+1. [Content](#Content)
+1. [License](#license)
 
-- Python: Emily Bache
-- Ruby: Kim Persson and Lennart Fridén
-- Javascript: Antti Tarvainen
+---
 
-## Kata: Yatzy rules
+## Motivation
 
-The game of Yatzy is a simple dice game. Each player
-rolls five six-sided dice. They can re-roll some or all
-of the dice up to three times (including the original roll).
+This project motivation is try to test all the learning that we have done since we started the course of _Web Development_. In this we will find non conventional and bad coding routines that we should be able to detect and correct.
 
-For example, suppose a players rolls:
+**[⬆ back to top](#tabe-of-contents)**
 
-    3,4,5,5,2
-    
-They hold (-,-,5,5,-) and re-roll (3,4,-,-,2):
+---
 
-    5,1,5,5,3
+## Used Technologies
 
-They hold (5,-,5,5,-) and re-roll (-,1,-,-,3):
+- Python
+- Pytest
+- MarkDown
+- Github
 
-    5,6,5,5,2
+**[⬆ back to top](#tabe-of-contents)**
 
-The player then places the roll in a category, such as ones,
-twos, fives, pair, two pairs etc (see below). If the roll is
-compatible with the category, the player gets a score for the
-roll according to the rules. If the roll is not compatible
-with the category, the player scores zero for the roll.
+---
 
-For example, suppose a player scores 5,6,5,5,2 in the fives
-category they would score 15 (three fives). The score for
-that go is then added to their total and the category cannot
-be used again in the remaining goes for that game. 
-A full game consists of one go for each category. Thus, for
-their last go in a game, a player must choose their only
-remaining category.
+## Content
 
-Your task is to score a GIVEN roll in a GIVEN category.
-You do NOT have to program the random dice rolling.
-The game is NOT played by letting the computer choose the
-highest scoring category for a given roll.
-  
+The content of this project it's separed into two different directories **Domain** and **Resources**.
 
-## Kata: Yatzy Categories and Scoring Rules
+### Domain
 
-### Chance: 
-The player scores the sum of all dice, no matter what they read.
-For example:
-  
--   1,1,3,3,6 placed on "chance" scores 14 (1+1+3+3+6)
--   4,5,5,6,1 placed on "chance" scores 21 (4+5+5+6+1)  
+In this direcotry we will find that it's subdivided into another two, **src** and **test**.
 
-### Yatzy: 
-If all dice have the same number,
-the player scores 50 points. 
-For example:
-  
--   1,1,1,1,1 placed on "yatzy" scores 50
--   1,1,1,2,1 placed on "yatzy" scores 0
+#### src
 
-### Ones, Twos, Threes, Fours, Fives, Sixes: 
-The player scores the sum of the dice that reads one, 
-two, three, four, five or six, respectively. 
-For example:
+Inside _src_ we have the main program that alredy has been refactorized and is the completely functional.
 
--   1,1,2,4,4 placed on "fours" scores 8 (4+4)
--   2,3,2,5,1 placed on "twos" scores 4  (2+2)
--   3,3,3,4,5 placed on "ones" scores 0
+#### test
 
-### Pair: 
-The player scores the sum of the two highest matching dice.
-For example, when placed on "pair":
-  
--   3,3,3,4,4 scores 8 (4+4)
--   1,1,6,2,6 scores 12 (6+6)
--   3,3,3,4,1 scores 6 (3+3)
--   3,3,3,3,1 scores 6 (3+3)
+Inside _test_ we have all the test cases that have been built to check the functionality of the program and if it runs correctly following the rules of the Yatzy.
 
-### Two pairs: 
-If there are two pairs of dice with the same number, the
-player scores the sum of these dice. 
-For example, when placed on "two pairs":
-  
--   1,1,2,3,3 scores 8 (1+1+3+3)
--   1,1,2,3,4 scores 0
--   1,1,2,2,2 scores 6 (1+1+2+2)
+### Resources
 
-### Three of a kind: 
-If there are three dice with the same number, the player
-scores the sum of these dice. 
-For example, when placed on "three of a kind":
-    
--    3,3,3,4,5 scores 9 (3+3+3)
--    3,3,4,5,6 scores 0
--    3,3,3,3,1 scores 9 (3+3+3)
+The directory of _resources_ how it tells the name has been built to keep all the external resources to the Yatzy program, in it we will find:
 
-### Four of a kind: 
-If there are four dice with the same number, the player
-scores the sum of these dice. 
-For example, when placed on "four of a kind":
-  
--    2,2,2,2,5 scores 8 (2+2+2+2)
--    2,2,2,5,5 scores 0
--    2,2,2,2,2 scores 8 (2+2+2+2)
+###### How to play Yatzy
 
-### Small straight: 
-When placed on "small straight", if the dice read
+In this document we have the rules of Yatzy in case we have never played before and we don't know how it works the logic of the game. It will have a clear explanation relationed with the program we built to help the user to understand how the program and test cases works.
 
-   1,2,3,4,5, 
-   
-the player scores 15 (the sum of all the dice).
+---
 
-### Large straight: 
-When placed on "large straight", if the dice read
+###### Yatzy Code Smells
 
-   2,3,4,5,6, 
-   
-the player scores 20 (the sum of all the dice).
+In this docuemnt we will find an original copy of the program of the game of Yatzy. We keep it to give the user a clue about how this kata should be resolved and because our teacher has asked if we can write down somwhere all the code smells we have been able to find in the original program. In this document we wrote all the code smells that we could find on the top of each function that conforms the yatzy program.
 
-### Full house: 
-If the dice are two of a kind and three of a kind, the
-player scores the sum of all the dice. 
-For example, when placed on "full house":
-   
--    1,1,2,2,2 scores 8 (1+1+2+2+2) 
--    2,2,3,3,4 scores 0
--    4,4,4,4,4 scores 0
+---
+
+###### Yatzy Explained
+
+This document have all the functions explained minutely one by one, in case any user is not able to understand the code that conforms the yatzy program game.
+
+---
+
+## License
+
+**[⬆ back to top](#tabe-of-contents)**
+
+---
+
+MIT License
+
+Copyright (c) 2020 AntoniPizarro and Pau Llinàs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+**[⬆ back to top](#tabe-of-contents)**
