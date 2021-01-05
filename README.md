@@ -2,6 +2,7 @@
 
 > In this repository you'll wind the refactor of a **Christamas Kata** called Yatzy. This project has been designed for the Web _Development students_ of the first year. The goal of thsi Christmas kata is try to detect different code smells and try to make an effective and powerful refactoring.
 
+
 ## Table of Contents
 
 1. [Motivation](#motivation)
@@ -11,6 +12,7 @@
 
 ---
 
+
 ## Motivation
 
 This project motivation is try to test all the learning that we have done since we started the course of _Web Development_. In this we will find non conventional and bad coding routines that we should be able to detect and correct.
@@ -18,6 +20,7 @@ This project motivation is try to test all the learning that we have done since 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 
 ## Used Technologies
 
@@ -29,6 +32,7 @@ This project motivation is try to test all the learning that we have done since 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 
 ## Content
 
@@ -72,7 +76,6 @@ This document have all the functions explained minutely one by one, in case any 
 
 **[⬆ back to top](#table-of-contents)**
 
----
 
 ## License
 
