@@ -42,6 +42,8 @@ In this direcotry we will find that it's subdivided into another two, **src** an
 
 Inside _src_ we have the main program that alredy has been refactorized and is the completely functional.
 
+---
+
 #### test
 
 Inside _test_ we have all the test cases that have been built to check the functionality of the program and if it runs correctly following the rules of the Yatzy.
@@ -49,6 +51,8 @@ Inside _test_ we have all the test cases that have been built to check the funct
 ### Resources
 
 The directory of _resources_ how it tells the name has been built to keep all the external resources to the Yatzy program, in it we will find:
+
+---
 
 ###### How to play Yatzy
 
@@ -66,11 +70,11 @@ In this docuemnt we will find an original copy of the program of the game of Yat
 
 This document have all the functions explained minutely one by one, in case any user is not able to understand the code that conforms the yatzy program game.
 
+**[⬆ back to top](#table-of-contents)**
+
 ---
 
 ## License
-
-**[⬆ back to top](#table-of-contents)**
 
 ---
 
