@@ -1,4 +1,4 @@
-class Yatzy:
+class Yatzy():
 
     def __init__(self, *dice):
         self.dice = list(dice)
