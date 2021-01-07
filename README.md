@@ -7,6 +7,7 @@
 1. [Motivation](#motivation)
 1. [Used Technologies](#used-technologies)
 1. [Content](#Content)
+1. [Reflections](#reflections)
 1. [License](#license)
 
 ---
@@ -15,9 +16,9 @@
 
 This project motivation is try to test all the learning that we have done since we started the course of _Web Development_. In this we will find non conventional and bad coding routines that we should be able to detect and correct.
 
-**[⬆ back to top](#table-of-contents)**
-
 ---
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Used Technologies
 
@@ -26,25 +27,25 @@ This project motivation is try to test all the learning that we have done since 
 - MarkDown
 - Github
 
-**[⬆ back to top](#table-of-contents)**
-
 ---
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Content
 
-The content of this project it's separed into two different directories **Domain** and **Resources**.
+> The content of this project it's separed into two different directories **Domain** and **Resources**.
 
 ### Domain
 
 In this direcotry we will find that it's subdivided into another two, **src** and **test**.
 
-#### src
+- **src**
 
 Inside _src_ we have the main program that alredy has been refactorized and is the completely functional.
 
 ---
 
-#### test
+- **test**
 
 Inside _test_ we have all the test cases that have been built to check the functionality of the program and if it runs correctly following the rules of the Yatzy.
 
@@ -74,6 +75,32 @@ This document have all the functions explained minutely one by one, in case any 
 
 **[⬆ back to top](#table-of-contents)**
 
+## Reflections
+
+> Now we proceed to explain the reflections we went writing down through while we were solving the kata.
+
+###### How much duplicated code is in your solution ? And in your test cases ?
+
+The code of my solution i think is well implemented, is true that most of the functions makes it's purpose but the functions that try to get just the sumative of the count of the dice number could be implemented in just one function because the code has been duplicated to each function that operates for each number that could be in a dice face. And comeback to happen the same on the functions that are similar to each other like _two_pair_, _three_of_a_kind_ or _four_of_a_kind_. We kept it separated because following the rules of Yatzy i think should be differenciated from the others acting like separated actions that a user can choose depending of the result of the dices and the elections that has left and him/her has made before.
+
+Respect to the test cases, we refactor them until we didn't had duplicated long code and finally we added a few more that we thought could break the game program.
+
+---
+
+###### Did you write a list of test cases before start ?
+
+Yes. For this kata we followed the methodology of TDD (Test-Drive-Development) first of all we refactor the actual test cases we have and we added a few more trying to break the program or trying to find a bug in it. After that we proceed to refactor and improve the Yatzy game program.
+
+---
+
+###### How did you decide the order in wich to implement the test cases ?
+
+We decide to follow the order of the functions to implement the different test cases and an organization on them. The game program starts checking for a chance and a Yatzy, followed the account of the numbers that we can find in the six faces of a dice, this ones will be our first functions to test and therefore this ones will be our first test cases. We continue with the next more difficult rules to the most sophisticated rules like could be the _full_house_ function.
+
+---
+
+**[⬆ back to top](#table-of-contents)**
+
 ## License
 
 MIT License
@@ -97,5 +124,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
 
 **[⬆ back to top](#table-of-contents)**
