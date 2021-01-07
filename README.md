@@ -18,11 +18,7 @@ This project motivation is try to test all the learning that we have done since 
 
 ---
 
-<<<<<<< HEAD
 **[⬆ back to top](#table-of-contents)**
-=======
-
-> > > > > > > 7d5a253fd6feb6f5c09199a708bf6b14f2a4cb03
 
 ## Used Technologies
 
@@ -33,11 +29,7 @@ This project motivation is try to test all the learning that we have done since 
 
 ---
 
-<<<<<<< HEAD
 **[⬆ back to top](#table-of-contents)**
-=======
-
-> > > > > > > 7d5a253fd6feb6f5c09199a708bf6b14f2a4cb03
 
 ## Content
 
