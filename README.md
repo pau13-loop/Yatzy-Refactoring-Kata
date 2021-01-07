@@ -1,6 +1,6 @@
 ﻿# Yatzy
 
-> In this repository you'll wind the refactor of a **Christamas Kata** called Yatzy. This project has been designed for the Web _Development students_ of the first year. The goal of thsi Christmas kata is try to detect different code smells and try to make an effective and powerful refactoring.
+> In this repository you'll wind the refactor of a **Christamas Kata** called Yatzy. This project has been designed for the Web _Development students_ of the first year. The goal of this Christmas kata is try to detect different code smells and try to make an effective and powerful refactoring.
 
 ## Table of Contents
 
